@@ -10,16 +10,16 @@ Currently supports sqlite and postgreSQL (npgsql)
 If no provider paramter is provided, then only Microsoft.EntityFrameworkCore and Microsoft.EntityFrameworkCore.Design will be added. <br>
 Run in directory with csproj file
 
-```bash
+```sh
 add_efc
 ```
 
 ### With provider
 
-```bash
+```sh
 add_efc -provider sqlite
 ```
 
-```bash
+```sh
 add_efc -provider psql
 ```
