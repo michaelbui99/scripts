@@ -2,7 +2,7 @@
 
 Create directory and add directory to Path environment variable. <br>
 
-## add_efc
+## efc_add
 Currently supports sqlite and postgreSQL (npgsql)
 
 ### Without provider
@@ -11,15 +11,21 @@ If no provider paramter is provided, then only Microsoft.EntityFrameworkCore and
 Run in directory with csproj file
 
 ```sh
-add_efc
+efc_add
 ```
 
 ### With provider
 
 ```sh
-add_efc -provider sqlite
+efc_add -provider sqlite
 ```
 
 ```sh
-add_efc -provider psql
+efc_add -provider psql
+```
+
+## efc_migrate_update
+
+```sh
+efc_migrate_update -name 0_InitialCreate
 ```
