@@ -4,7 +4,9 @@
 
 param(
     [Parameter(Mandatory=$true)]
-    [string]$name
+    [string]$name,
+    [Parameter(Mandatory=$false)]
+    [String]$context
 )
 
 if (-not($name))
@@ -15,9 +17,18 @@ else
 {
     $AddMigration = "dotnet ef migrations add $name"
 
+    if($context)
+    {
+        $AddMigration+= " --context $context"
+    }
+
     Invoke-Expression $AddMigration
 
     $UpdateDB = "dotnet ef database update"
 
+    if($context)
+    {
+        $UpdateDB+= " --context $context"
+    }
     Invoke-Expression $UpdateDB
 }
